@@ -37,7 +37,7 @@
     &Item {
       border: 1px solid gray;
       border-radius: 4px;
-      margin-right: 16px;
+      margin-right: 32px;
       height: 25px;
       width: 25px;
       margin-bottom: 16px;
@@ -49,9 +49,9 @@
   }
 
   .empty {
-    border: 1px solid white;
+    border: 1px solid transparent;
     border-radius: 4px;
-    margin-right: 16px;
+    margin-right: 32px;
     height: 25px;
     width: 25px;
     margin-bottom: 16px;
