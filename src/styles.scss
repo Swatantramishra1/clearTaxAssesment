@@ -1,1 +1,187 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  color: inherit;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.left {
+    justify-content: left;
+  }
+
+  &.right {
+    justify-content: right;
+  }
+
+  &.top {
+    align-items: flex-start;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+  }
+
+  &.base {
+    align-items: baseline;
+  }
+
+  &.spaceBetween {
+    justify-content: space-between;
+  }
+
+  &.spaceAround {
+    justify-content: space-around;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.rowReverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.left {
+    align-items: flex-start;
+  }
+
+  &.right {
+    align-items: flex-end;
+  }
+
+  &.top {
+    justify-content: flex-start;
+  }
+
+  &.bottom {
+    justify-content: flex-end;
+  }
+
+  &.spaceBetween {
+    justify-content: space-between;
+  }
+
+  &.stretch {
+    align-self: stretch;
+  }
+
+  &.stretchItems {
+    align-items: stretch;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.grow {
+    flex: 1;
+  }
+}
+
+.divider {
+  &2 {
+    display: block;
+    width: 100%;
+    height: 2px;
+  }
+
+  &4 {
+    display: block;
+    width: 100%;
+    height: 4px;
+  }
+
+  &6 {
+    display: block;
+    width: 100%;
+    height: 6px;
+  }
+
+  &8 {
+    display: block;
+    width: 100%;
+    height: 8px;
+  }
+}
+
+.spacer {
+  &2 {
+    display: block;
+    height: 100%;
+    width: 2px;
+  }
+
+  &4 {
+    display: block;
+    height: 100%;
+    width: 4px;
+  }
+
+  &6 {
+    display: block;
+    height: 100%;
+    width: 6px;
+  }
+
+  &8 {
+    display: block;
+    height: 100%;
+    width: 8px;
+  }
+
+  &16 {
+    display: block;
+    height: 100%;
+    width: 16px;
+  }
+}
+
+.section-divider {
+  width: 100%;
+  border: 0.2px solid #8080802b;
+}

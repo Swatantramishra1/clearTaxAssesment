@@ -1,0 +1,13 @@
+<div class="container">
+  <header class="column center-vertical left center">CLEARTAX</header>
+  <div class="divider8"></div>
+
+  <div class="containerLayout">
+    <app-home-info [tempObj]="tempObj" [data]="data"></app-home-info>
+    <div class="divider8"></div>
+    <app-home-content
+      [data]="data"
+      (handleClick)="handleClick($event)"
+    ></app-home-content>
+  </div>
+</div>
