@@ -4,6 +4,7 @@ import { SeatComponent } from './seats/seat.component';
 import { SeatListComponent } from './seats/seat-list.component';
 import { SeatItemComponent } from './seats/seat-item.component';
 import { InfoComponent } from './info/info.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 export const components = [
   CategoryComponent,
@@ -12,4 +13,5 @@ export const components = [
   SeatItemComponent,
   SeatListComponent,
   InfoComponent,
+  TooltipComponent,
 ];

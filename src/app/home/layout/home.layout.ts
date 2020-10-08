@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CONFIG } from 'src/app/config/config';
 import { DATA } from 'src/app/data/data';
 
 @Component({
@@ -11,7 +12,8 @@ export class HomePageLayoutComponent {
   data = DATA;
   tempData = JSON.parse(JSON.stringify(DATA));
 
-  maxCanSelect = 3;
+  maxCanSelect = CONFIG.maxCanSelect;
+
   selected = 0;
 
   tempObj = {
@@ -41,7 +43,7 @@ export class HomePageLayoutComponent {
       if (this.getNumberOfSeatSelected() <= this.maxCanSelect) {
         if (this.checkCategoryMatch(CatIndex)) {
           if (this.checkForAvailableSeats(dt) >= 1) {
-            this.selectSeats(dt);
+            this.selectAvailableSeats(dt);
           }
         } else {
           alert(
@@ -82,7 +84,7 @@ export class HomePageLayoutComponent {
     let availableSeatCount = 0;
 
     for (let index = itemIndex; index < seats.length; index++) {
-      if (!seats[index].selected) {
+      if (!seats[index].selected && !seats[index].userSelected) {
         availableSeatCount++;
       }
     }
@@ -90,7 +92,7 @@ export class HomePageLayoutComponent {
     return availableSeatCount;
   }
 
-  private selectSeats(dt) {
+  private selectAvailableSeats(dt) {
     const { CatIndex, listIndex, itemIndex } = dt;
     const seats = this.data[CatIndex].seats[listIndex].sectionSeats;
 
@@ -99,15 +101,24 @@ export class HomePageLayoutComponent {
       if (this.getNumberOfSeatSelected() <= this.maxCanSelect) {
         if (this.getNumberOfSeatSelected() === this.maxCanSelect) {
         } else {
-          this.setNumberOfSeatSelected();
+          if (!seats[index].selected && !seats[index].userSelected) {
+            this.setNumberOfSeatSelected();
 
-          if (!seats[index].selected) {
-            seats[index].selected = true;
+            if (!seats[index].userSelected) {
+              seats[index].userSelected = true;
+            }
+          } else {
+            this.setFinalData(CatIndex, listIndex, seats);
+            return;
           }
         }
       }
     }
 
+    this.setFinalData(CatIndex, listIndex, seats);
+  }
+
+  private setFinalData(CatIndex, listIndex, seats) {
     this.data[CatIndex].seats[listIndex].sectionSeats = seats;
     this.getTotalPrice();
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-home-category',
@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
       <div class="section-divider"></div>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['../../styles/category.component.scss'],
 })
 export class CategoryComponent {

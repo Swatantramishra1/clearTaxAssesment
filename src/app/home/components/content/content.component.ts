@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-home-content',
@@ -15,6 +21,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
       ></app-home-seats>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['../../styles/home.page.scss'],
 })
 export class ContentComponent {

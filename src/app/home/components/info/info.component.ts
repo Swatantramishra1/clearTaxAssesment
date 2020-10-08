@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-home-info',
   template: `
-    <div class="column left">
+    <div class="column left info">
       <div class="row" *ngIf="tempObj.selectedCategory !== null">
         Selected Category :
         <div class="containerLayoutCategory row">
